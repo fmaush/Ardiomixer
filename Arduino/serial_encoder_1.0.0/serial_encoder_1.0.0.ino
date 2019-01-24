@@ -224,16 +224,13 @@ MasterVolume_Mute_Button;1    MasterVolume_Fader;(0-100)
   //RotaryEncoder
   if (Rotary_Encoder_Present != Rotary_Encoder_Present)
   {
-    if (gerade)
+    if (digitalRead(Rotary_Encoder_Out_B) != Rotary_Encoder_Present)
     {
-      if (digitalRead(Rotary_Encoder_Out_B) != Rotary_Encoder_Present)
-      {
-        Serial.println("Rotary_Encoder;1");
-      }
-      else
-      {
-        Serial.println("Rotary_Encoder;-1");
-      }
+      Serial.println("Rotary_Encoder;1");
+    }
+    else
+    {
+      Serial.println("Rotary_Encoder;-1");
     }
   }
 
@@ -346,15 +343,6 @@ MasterVolume_Mute_Button;1    MasterVolume_Fader;(0-100)
 
   MasterVolume_Mute_Button_Previous = MasterVolume_Mute_Button_Present;
 
-  //Reseting gerade to show if we are on an even or uneven cycle
-  if (gerade == true)
-  {
-    gerade = false;
-  }
-  else
-  {
-    gerade = true;
-  }
 }
 
 //
