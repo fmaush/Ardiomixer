@@ -110,7 +110,7 @@ int MasterVolume_Fader_Present;
 int MasterVolume_Fader_Previous;
 
 //Variabels
-boolean gerade = true;
+int Rotary_Encoder_Counter = 0;
 
 void setup()
 {
@@ -222,15 +222,31 @@ MasterVolume_Mute_Button;1    MasterVolume_Fader;(0-100)
   MasterVolume_Mute_Button_Present = digitalRead(MasterVolume_Mute_Button);
 
   //RotaryEncoder
-  if (Rotary_Encoder_Present != Rotary_Encoder_Present)
+  if (Rotary_Encoder_Previous != Rotary_Encoder_Present)
   {
     if (digitalRead(Rotary_Encoder_Out_B) != Rotary_Encoder_Present)
     {
-      Serial.println("Rotary_Encoder;1");
+      if (Rotary_Encoder_Counter == 1)
+      {
+        Serial.println("Rotary_Encoder;-1");//Rotary_Encoder_Counterclockwise
+		Rotary_Encoder_Counter=0;
+      }
+      else
+      {
+        Rotary_Encoder_Counter++;
+      }
     }
     else
     {
-      Serial.println("Rotary_Encoder;-1");
+      if (Rotary_Encoder_Counter == -1)
+      {
+        Serial.println("Rotary_Encoder;1");//Clockwise
+		Rotary_Encoder_Counter=0;
+      }
+      else
+      {
+        Rotary_Encoder_Counter--;
+      }
     }
   }
 
@@ -342,7 +358,6 @@ MasterVolume_Mute_Button;1    MasterVolume_Fader;(0-100)
   Fader4_Solo_Button_Previous = Fader4_Solo_Button_Present;
 
   MasterVolume_Mute_Button_Previous = MasterVolume_Mute_Button_Present;
-
 }
 
 //
