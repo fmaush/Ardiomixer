@@ -1,5 +1,4 @@
 
-//start
 
 //define RotaryEncoderPins
 
@@ -9,45 +8,43 @@
 
 //define FaderPins
 
-/*
-#define Fader1_Mute_Button 5
-#define Fader1_Mute_Button_LED 
-#define Fader1_Lock_Button 
-#define Fader1_Lock_Button_LED 
-#define Fader1_Solo_Button
-#define Fader1_Solo_Button_LED
-#define Fader1_Fader
+#define Fader1_Mute_Button 9
+#define Fader1_Mute_Button_LED 9
+#define Fader1_Lock_Button 9
+#define Fader1_Lock_Button_LED 9
+#define Fader1_Solo_Button 9
+#define Fader1_Solo_Button_LED 9
+#define Fader1_Fader 9
 
-#define Fader2_Mute_Button
-#define Fader2_Mute_Button_LED
-#define Fader2_Lock_Button
-#define Fader2_Lock_Button_LED
-#define Fader2_Solo_Button
-#define Fader2_Solo_Button_LED
-#define Fader2_Fader
+#define Fader2_Mute_Button 9
+#define Fader2_Mute_Button_LED 9
+#define Fader2_Lock_Button 9
+#define Fader2_Lock_Button_LED 9
+#define Fader2_Solo_Button 9
+#define Fader2_Solo_Button_LED 9
+#define Fader2_Fader 9
 
-#define Fader3_Mute_Button
-#define Fader3_Mute_Button_LED
-#define Fader3_Lock_Button
-#define Fader3_Lock_Button_LED
-#define Fader3_Solo_Button
-#define Fader3_Solo_Button_LED
-#define Fader3_Fader
+#define Fader3_Mute_Button 9
+#define Fader3_Mute_Button_LED 9
+#define Fader3_Lock_Button 9
+#define Fader3_Lock_Button_LED 9
+#define Fader3_Solo_Button 9
+#define Fader3_Solo_Button_LED 9
+#define Fader3_Fader 9
 
-#define Fader4_Mute_Button
-#define Fader4_Mute_Button_LED
-#define Fader4_Lock_Button
-#define Fader4_Lock_Button_LED
-#define Fader4_Solo_Button
-#define Fader4_Solo_Button_LED
-#define Fader4_Fader
-*/
+#define Fader4_Mute_Button 9
+#define Fader4_Mute_Button_LED 9
+#define Fader4_Lock_Button 9
+#define Fader4_Lock_Button_LED 9
+#define Fader4_Solo_Button 9
+#define Fader4_Solo_Button_LED 9
+#define Fader4_Fader 9
 
-//define MastervolumeMuteButton Pin
-#define MasterVolume_Mute_Button 8
+#define MastervolumeMuteButton 9
+#define MasterVolume_Mute_Button 9
 
-//#define MasterVolume_Mute_Button_LED
-//#define MasterVolume_Fader
+#define MasterVolume_Mute_Button_LED 9
+#define MasterVolume_Fader 9
 
 //Rotary Encoder
 int Rotary_Encoder_Present;
@@ -161,8 +158,8 @@ void setup()
   pinMode(Fader4_Fader, INPUT);
 
   //Mastervolume
-  pinMode(MasterVolume_Button, INPUT_PULLUP);
-  pinMode(MasterVolume_Button_LED, OUTPUT);
+  pinMode(MasterVolume_Mute_Button, INPUT_PULLUP);
+  pinMode(MasterVolume_Mute_Button_LED, OUTPUT);
   pinMode(MasterVolume_Fader, INPUT);
 
   //Setting previous states
@@ -187,7 +184,7 @@ void setup()
 void loop()
 {
   /* The Dataflow
-RoRefrences to the DataStream Outputed by the Arduino
+  Refrences to the DataStream Outputed by the Arduino
 
 Rotary_Encoder;(1|-1)  Rotary_Encoder_Button;1
 //RotaryEncoder -1 back +1 forward ; 1=on
@@ -195,18 +192,39 @@ Fader1_Mute_Button;1 Fader1_Lock_Button;1 Fader1_Solo_Button;1  Fader1_Fader;(0-
 //Button 1=on//Fader: 0 =lowest 100= highest
 Fader2_Mute_Button;1  Fader2_Lock_Button;1  Fader2_Solo_Button;1  Fader2_Fader;(0-100)
 //*
-Fader3_Mute_Button;1 Fader3_Lock_Button;1	Fader3_Solo_Button(0,1)	Fader3_Fader;(0-100)
+Fader3_Mute_Button;1 Fader3_Lock_Button;1  Fader3_Solo_Button(0,1) Fader3_Fader;(0-100)
 //*
-Fader4_Mute_Button;1	Fader4_Lock_Button;1	Fader4_Solo_Button;1	Fader4_Fader;(0-100)
+Fader4_Mute_Button;1  Fader4_Lock_Button;1  Fader4_Solo_Button;1  Fader4_Fader;(0-100)
 //*
-MasterVolume_Mute_Button;1		MasterVolume_Fader;(0-100)
+MasterVolume_Mute_Button;1    MasterVolume_Fader;(0-100)
 //*
 
 */
 
-  //RotaryEncoder
+  //Updating variables
   Rotary_Encoder_Present = digitalRead(Rotary_Encoder_Out_A);
-  if (Rotary_Encoder_Present != Rotary_Encoder_Previous)
+  Rotary_Encoder_Button_Present = digitalRead(Rotary_Encoder_Button);
+
+  Fader1_Mute_Button_Present = digitalRead(Fader1_Mute_Button);
+  Fader1_Lock_Button_Present = digitalRead(Fader1_Lock_Button);
+  Fader1_Solo_Button_Present = digitalRead(Fader1_Solo_Button);
+
+  Fader2_Mute_Button_Present = digitalRead(Fader2_Mute_Button);
+  Fader2_Lock_Button_Present = digitalRead(Fader2_Lock_Button);
+  Fader2_Solo_Button_Present = digitalRead(Fader2_Solo_Button);
+
+  Fader3_Mute_Button_Present = digitalRead(Fader3_Mute_Button);
+  Fader3_Lock_Button_Present = digitalRead(Fader3_Lock_Button);
+  Fader3_Solo_Button_Present = digitalRead(Fader3_Solo_Button);
+
+  Fader4_Mute_Button_Present = digitalRead(Fader4_Mute_Button);
+  Fader4_Lock_Button_Present = digitalRead(Fader4_Lock_Button);
+  Fader4_Solo_Button_Present = digitalRead(Fader4_Solo_Button);
+
+  MasterVolume_Mute_Button_Present = digitalRead(MasterVolume_Mute_Button);
+
+  //RotaryEncoder
+  if (Rotary_Encoder_Present != Rotary_Encoder_Present)
   {
     if (gerade)
     {
@@ -222,15 +240,30 @@ MasterVolume_Mute_Button;1		MasterVolume_Fader;(0-100)
   }
 
   //Fader1_Mute_Button
+
   if (Fader1_Mute_Button_Previous != Fader1_Mute_Button_Present && Fader1_Mute_Button_Present == 1)
   {
-    Serial.println("Fader1_Mute_Button;1")
+    Serial.println("Fader1_Mute_Button;1");
+  }
+  //Fader2_Mute_Button
+  if (Fader2_Mute_Button_Previous != Fader2_Mute_Button_Present && Fader2_Mute_Button_Present == 1)
+  {
+    Serial.println("Fader2_Mute_Button;1");
+  }
+  //Fader3_Mute_Button
+  if (Fader3_Mute_Button_Previous != Fader3_Mute_Button_Present && Fader3_Mute_Button_Present == 1)
+  {
+    Serial.println("Fader3_Mute_Button;1");
+  }
+  //Fader4_Mute_Button
+  if (Fader4_Mute_Button_Previous != Fader4_Mute_Button_Present && Fader4_Mute_Button_Present == 1)
+  {
+    Serial.println("Fader4_Mute_Button;1");
   }
 
-  //Fader1_Lock_Button
-  if (Fader1_Lock_Button_Previous != Fader1_Lock_Button_Present && Fader1_Lock_Button_Present == 1)
+  if (Rotary_Encoder_Button_Previous != Rotary_Encoder_Button_Present && Rotary_Encoder_Button_Present == 1)
   {
-    Serial.println("Fader1_Lock_Button;1")
+    Serial.println("Rotary_Encoder_Button;1");
   }
 
   //
@@ -255,111 +288,16 @@ MasterVolume_Mute_Button;1		MasterVolume_Fader;(0-100)
   MasterVolume_Mute_Button_Previous = MasterVolume_Mute_Button_Present;
 
   //Reseting gerade to show if we are on an even or uneven cycle
-   if (gerade == true {
+  if (gerade == true)
+  {
     gerade = false;
-        } else{
+  }
+  else
+  {
     gerade = true;
-    )
-}
-
-   //
-   //NotePad
-   //
-   /*
-const int  buttonPin = 2;    // the pin that the pushbutton is attached to
-const int ledPin = 13;       // the pin that the LED is attached to
-
-// Variables will change:
-int buttonPushCounter = 0;   // counter for the number of button presses
-int buttonState = 0;         // current state of the button
-int lastButtonState = 0;     // previous state of the button
-
-void setup() {
-  // initialize the button pin as a input:
-  pinMode(buttonPin, INPUT);
-  // initialize the LED as an output:
-  pinMode(ledPin, OUTPUT);
-  // initialize serial communication:
-  Serial.begin(9600);
-}
-
-
-void loop() {
-  // read the pushbutton input pin:
-  buttonState = digitalRead(buttonPin);
-
-  // compare the buttonState to its previous state
-  if (buttonState != lastButtonState) {
-    // if the state has changed, increment the counter
-    if (buttonState == HIGH) {
-      // if the current state is HIGH then the button went from off to on:
-      buttonPushCounter++;
-      Serial.println("on");
-      Serial.print("number of button pushes: ");
-      Serial.println(buttonPushCounter);
-    } else {
-      // if the current state is LOW then the button went from on to off:
-      Serial.println("off");
-    }
-    // Delay a little bit to avoid bouncing
-    delay(50);
   }
-  // save the current state as the last state, for next time through the loop
-  lastButtonState = buttonState;
-
-
-  // turns on the LED every four button pushes by checking the modulo of the
-  // button push counter. the modulo function gives you the remainder of the
-  // division of two numbers:
-  if (buttonPushCounter % 4 == 0) {
-    digitalWrite(ledPin, HIGH);
-  } else {
-    digitalWrite(ledPin, LOW);
-  }
-
 }
 
-//------------------------------------
-
-class Button
-{
-private:
-  byte low;
-  byte high;
-  int pinnumber;
-  String name;
-
-public:
-  Button();
-  boolean isLow();
-  boolean isHigh();
-  int get_pinnumber;
-  String get_name;
-};
-
-Button(int pinnumber, String name)
-{
-  this->low = 0;
-  this->high = 1;
-  this->pinnumber = pinnumber;
-  this->name = name;
-}
-
-boolean isLow(int pinnumber)
-{
-  return (digitalRead(pinumber) = low);
-}
-
-boolean isHigh(int pinnumber)
-{
-  return (digitalRead(pinumber) = high);
-}
-
-int get_pinnumber()
-{
-  return pinnumber;
-}
-
-//-------------------------------------------------------
-
-*/
+//
+//NotePad
+//
