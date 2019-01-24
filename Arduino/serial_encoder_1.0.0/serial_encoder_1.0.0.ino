@@ -111,7 +111,7 @@ int MasterVolume_Fader_Previous;
 
 //Variabels
 int Rotary_Encoder_Counter = 0;
-
+int incomingByte = 0;
 void setup()
 {
   //RotaryEncoder PinMode
@@ -228,8 +228,8 @@ MasterVolume_Mute_Button;1    MasterVolume_Fader;(0-100)
     {
       if (Rotary_Encoder_Counter == 1)
       {
-        Serial.println("Rotary_Encoder;-1");//Rotary_Encoder_Counterclockwise
-		Rotary_Encoder_Counter=0;
+        Serial.println("Rotary_Encoder;-1"); //Rotary_Encoder_Counterclockwise
+        Rotary_Encoder_Counter = 0;
       }
       else
       {
@@ -240,8 +240,8 @@ MasterVolume_Mute_Button;1    MasterVolume_Fader;(0-100)
     {
       if (Rotary_Encoder_Counter == -1)
       {
-        Serial.println("Rotary_Encoder;1");//Clockwise
-		Rotary_Encoder_Counter=0;
+        Serial.println("Rotary_Encoder;1"); //Clockwise
+        Rotary_Encoder_Counter = 0;
       }
       else
       {
