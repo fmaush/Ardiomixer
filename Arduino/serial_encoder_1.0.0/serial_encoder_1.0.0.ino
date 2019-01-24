@@ -204,13 +204,13 @@ void setup()
 void loop()
 {
   /*
-
 Rotary_Encoder(0,1,-1);Rotary_Encoder_Button(0,1);
 Fader1_Mute_Button(0,1);Fader1_Lock_Button(0,1);Fader1_Solo_Button(0,1);Fader1_Fader(0-100)
 Fader2_Mute_Button(0,1);Fader2_Lock_Button(0,1);Fader2_Solo_Button(0,1);Fader2_Fader(0-100)
 Fader3_Mute_Button(0,1);Fader3_Lock_Button(0,1);Fader3_Solo_Button(0,1);Fader3_Fader(0-100)
 Fader4_Mute_Button(0,1);Fader4_Lock_Button(0,1);Fader4_Solo_Button(0,1);Fader4_Fader(0-100)
 MasterVolume_Button(0,1);MasterVolume_Fader(0-100);
+
 
 */
   //RotaryEncoder
@@ -241,3 +241,4 @@ MasterVolume_Button(0,1);MasterVolume_Fader(0-100);
   }
   Rotary_Encoder_Previous_State = Rotary_Encoder_Present_State;
   }
+}
