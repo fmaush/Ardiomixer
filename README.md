@@ -4,4 +4,4 @@ Lies mich
 
 #Nicht anklicken!
 
-[Nicht anklicken] (http://meatspin.fr/img/meatspin.gif) 
+Bitte [Nicht anklicken] (http://meatspin.fr/img/meatspin.gif).
