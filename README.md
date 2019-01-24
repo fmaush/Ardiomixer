@@ -2,7 +2,6 @@
 
 Lies mich
 
+#Nicht anklicken!
 
-To Do
-
-~~Welt retten~~
+[Nicht anklicken] (http://meatspin.fr/img/meatspin.gif) 
