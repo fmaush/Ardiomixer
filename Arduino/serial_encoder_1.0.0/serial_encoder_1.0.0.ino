@@ -1,5 +1,3 @@
-
-
 //define RotaryEncoderPins
 
 #define Rotary_Encoder_Out_A 2
@@ -239,31 +237,82 @@ MasterVolume_Mute_Button;1    MasterVolume_Fader;(0-100)
     }
   }
 
+  //Rotary_Encoder_Button
+  if (Rotary_Encoder_Button_Previous != Rotary_Encoder_Button_Present && Rotary_Encoder_Button_Present == 1)
+  {
+    Serial.println("Rotary_Encoder_Button;1");
+  }
   //Fader1_Mute_Button
 
   if (Fader1_Mute_Button_Previous != Fader1_Mute_Button_Present && Fader1_Mute_Button_Present == 1)
   {
     Serial.println("Fader1_Mute_Button;1");
   }
+  //Fader1_Lock_Button
+
+  if (Fader1_Lock_Button_Previous != Fader1_Lock_Button_Present && Fader1_Lock_Button_Present == 1)
+  {
+    Serial.println("Fader1_Lock_Button;1");
+  }
+  //Fader1_Solo_Button
+
+  if (Fader1_Solo_Button_Previous != Fader1_Solo_Button_Present && Fader1_Solo_Button_Present == 1)
+  {
+    Serial.println("Fader1_Solo_Button;1");
+  }
   //Fader2_Mute_Button
+
   if (Fader2_Mute_Button_Previous != Fader2_Mute_Button_Present && Fader2_Mute_Button_Present == 1)
   {
     Serial.println("Fader2_Mute_Button;1");
   }
+  //Fader2_Lock_Button
+
+  if (Fader2_Lock_Button_Previous != Fader2_Lock_Button_Present && Fader2_Lock_Button_Present == 1)
+  {
+    Serial.println("Fader2_Lock_Button;1");
+  }
+  //Fader2_Solo_Button
+
+  if (Fader2_Solo_Button_Previous != Fader2_Solo_Button_Present && Fader2_Solo_Button_Present == 1)
+  {
+    Serial.println("Fader2_Solo_Button;1");
+  }
   //Fader3_Mute_Button
+
   if (Fader3_Mute_Button_Previous != Fader3_Mute_Button_Present && Fader3_Mute_Button_Present == 1)
   {
     Serial.println("Fader3_Mute_Button;1");
   }
+  //Fader3_Lock_Button
+
+  if (Fader3_Lock_Button_Previous != Fader3_Lock_Button_Present && Fader3_Lock_Button_Present == 1)
+  {
+    Serial.println("Fader3_Lock_Button;1");
+  }
+  //Fader3_Solo_Button
+
+  if (Fader3_Solo_Button_Previous != Fader3_Solo_Button_Present && Fader3_Solo_Button_Present == 1)
+  {
+    Serial.println("Fader3_Solo_Button;1");
+  }
   //Fader4_Mute_Button
+
   if (Fader4_Mute_Button_Previous != Fader4_Mute_Button_Present && Fader4_Mute_Button_Present == 1)
   {
     Serial.println("Fader4_Mute_Button;1");
   }
+  //Fader4_Lock_Button
 
-  if (Rotary_Encoder_Button_Previous != Rotary_Encoder_Button_Present && Rotary_Encoder_Button_Present == 1)
+  if (Fader4_Lock_Button_Previous != Fader4_Lock_Button_Present && Fader4_Lock_Button_Present == 1)
   {
-    Serial.println("Rotary_Encoder_Button;1");
+    Serial.println("Fader4_Lock_Button;1");
+  }
+  //Fader4_Solo_Button
+
+  if (Fader4_Solo_Button_Previous != Fader4_Solo_Button_Present && Fader4_Solo_Button_Present == 1)
+  {
+    Serial.println("Fader4_Solo_Button;1");
   }
 
   //
@@ -273,18 +322,23 @@ MasterVolume_Mute_Button;1    MasterVolume_Fader;(0-100)
   //Changing previous state to current state
   Rotary_Encoder_Previous = Rotary_Encoder_Present;
   Rotary_Encoder_Button_Previous = Rotary_Encoder_Button_Present;
+
   Fader1_Mute_Button_Previous = Fader1_Mute_Button_Present;
   Fader1_Lock_Button_Previous = Fader1_Lock_Button_Present;
   Fader1_Solo_Button_Previous = Fader1_Solo_Button_Present;
+
   Fader2_Mute_Button_Previous = Fader2_Mute_Button_Present;
   Fader2_Lock_Button_Previous = Fader2_Lock_Button_Present;
   Fader2_Solo_Button_Previous = Fader2_Solo_Button_Present;
+
   Fader3_Mute_Button_Previous = Fader3_Mute_Button_Present;
   Fader3_Lock_Button_Previous = Fader3_Lock_Button_Present;
   Fader3_Solo_Button_Previous = Fader3_Solo_Button_Present;
+
   Fader4_Mute_Button_Previous = Fader4_Mute_Button_Present;
   Fader4_Lock_Button_Previous = Fader4_Lock_Button_Present;
   Fader4_Solo_Button_Previous = Fader4_Solo_Button_Present;
+
   MasterVolume_Mute_Button_Previous = MasterVolume_Mute_Button_Present;
 
   //Reseting gerade to show if we are on an even or uneven cycle
