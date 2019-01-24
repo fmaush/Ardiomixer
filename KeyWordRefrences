@@ -1,15 +1,15 @@
 
 Refrences to the DataStream Outputed by the Arduino
 
-Rotary_Encoder(1,-1);Rotary_Encoder_Button(0,1);
-//-1 back +1 forward ; 0=off 1=on
-Fader1_Mute_Button(0,1);Fader1_Lock_Button(0,1);Fader1_Solo_Button(0,1);Fader1_Fader(0-100)
-//0=off 1=on//Fader: 0 =lowest 100= highest
-Fader2_Mute_Button(0,1);Fader2_Lock_Button(0,1);Fader2_Solo_Button(0,1);Fader2_Fader(0-100)
-//0=off 1=on//Fader: 0 =lowest 100= highest
-Fader3_Mute_Button(0,1);Fader3_Lock_Button(0,1);Fader3_Solo_Button(0,1);Fader3_Fader(0-100)
-//0=off 1=on//Fader: 0 =lowest 100= highest
+Rotary_Encoder;(1|-1);  Rotary_Encoder_Button;1;
+//RotaryEncoder -1 back +1 forward ; 1=on
+Fader1_Mute_Button;1; Fader1_Lock_Button;1; Fader1_Solo_Button;1;  Fader1_Fader;(0-100);
+//Button 1=on//Fader: 0 =lowest 100= highest
+Fader2_Mute_Button;1;  Fader2_Lock_Button;1;  Fader2_Solo_Button;1;  Fader2_Fader;(0-100);
+//
+Fader3_Mute_Button;1; Fader3_Lock_Button(0,1);Fader3_Solo_Button(0,1);Fader3_Fader(0-100)
+//
 Fader4_Mute_Button(0,1);Fader4_Lock_Button(0,1);Fader4_Solo_Button(0,1);Fader4_Fader(0-100)
-//0=off 1=on//Fader: 0 =lowest 100= highest
+//
 MasterVolume_Button(0,1);MasterVolume_Fader(0-100);
-//0=off 1=on//Fader: 0 =lowest 100= highest
+//
