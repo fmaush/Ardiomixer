@@ -4,4 +4,6 @@ Lies mich
 
 #Nicht anklicken!
 
-Bitte [Nicht anklicken] (http://meatspin.fr/img/meatspin.gif/).
+Top Secret!
+Nicht anklicken!
+https://bit.ly/2RG0yec
