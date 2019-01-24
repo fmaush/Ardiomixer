@@ -314,6 +314,11 @@ MasterVolume_Mute_Button;1    MasterVolume_Fader;(0-100)
   {
     Serial.println("Fader4_Solo_Button;1");
   }
+  //MasterVolume_Mute_Button
+  if (MasterVolume_Mute_Button_Previous != MasterVolume_Mute_Button_Present && MasterVolume_Mute_Button_Present == 1)
+  {
+    Serial.println("MasterVolume_Mute_Button;1");
+  }
 
   //
   //Reset of variables
