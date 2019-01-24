@@ -111,7 +111,7 @@ int MasterVolume_Fader_Previous;
 
 //Variabels
 int Rotary_Encoder_Counter = 0;
-int incomingByte = 0;
+
 void setup()
 {
   //RotaryEncoder PinMode
@@ -163,18 +163,23 @@ void setup()
   //Setting previous states
   Rotary_Encoder_Previous = digitalRead(Rotary_Encoder_Out_A);
   Rotary_Encoder_Button_Previous = digitalRead(Rotary_Encoder_Button);
+
   Fader1_Mute_Button_Previous = digitalRead(Fader1_Mute_Button);
   Fader1_Lock_Button_Previous = digitalRead(Fader1_Lock_Button);
   Fader1_Solo_Button_Previous = digitalRead(Fader1_Solo_Button);
+
   Fader2_Mute_Button_Previous = digitalRead(Fader2_Mute_Button);
   Fader2_Lock_Button_Previous = digitalRead(Fader2_Lock_Button);
   Fader2_Solo_Button_Previous = digitalRead(Fader2_Solo_Button);
+
   Fader3_Mute_Button_Previous = digitalRead(Fader3_Mute_Button);
   Fader3_Lock_Button_Previous = digitalRead(Fader3_Lock_Button);
   Fader3_Solo_Button_Previous = digitalRead(Fader3_Solo_Button);
+
   Fader4_Mute_Button_Previous = digitalRead(Fader4_Mute_Button);
   Fader4_Lock_Button_Previous = digitalRead(Fader4_Lock_Button);
   Fader4_Solo_Button_Previous = digitalRead(Fader4_Solo_Button);
+
   MasterVolume_Mute_Button_Previous = digitalRead(MasterVolume_Mute_Button);
 
   Serial.begin(9600);
@@ -222,6 +227,7 @@ MasterVolume_Mute_Button;1    MasterVolume_Fader;(0-100)
   MasterVolume_Mute_Button_Present = digitalRead(MasterVolume_Mute_Button);
 
   //RotaryEncoder
+
   if (Rotary_Encoder_Previous != Rotary_Encoder_Present)
   {
     if (digitalRead(Rotary_Encoder_Out_B) != Rotary_Encoder_Present)
