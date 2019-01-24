@@ -104,7 +104,8 @@ int Fader1_Solo_Button_Present;
 int Fader1_Lock_Button_Previous;
 int Fader1_Lock_Button_Present;
 
-int Fader1_Fader;
+int Fader1_Fader_Present;
+int Fader1_Fader_Previous;
 
 //Fader 2
 int Fader2_Mute_Button_Previous;
@@ -116,7 +117,8 @@ int Fader2_Solo_Button_Present;
 int Fader2_Lock_Button_Previous;
 int Fader2_Lock_Button_Present;
 
-int Fader2_Fader;
+int Fader2_Fader_Present;
+int Fader2_Fader_Previous;
 
 //Fader 3
 int Fader3_Mute_Button_Previous;
@@ -128,7 +130,8 @@ int Fader3_Solo_Button_Present;
 int Fader3_Lock_Button_Previous;
 int Fader3_Lock_Button_Present;
 
-int Fader3_Fader;
+int Fader3_Fader_Present;
+int Fader3_Fader_Previous;
 
 //Fader 4
 int Fader4_Mute_Button_Previous;
@@ -140,12 +143,14 @@ int Fader4_Solo_Button_Present;
 int Fader4_Lock_Button_Previous;
 int Fader4_Lock_Button_Present;
 
-int Fader4_Fader;
+int Fader4_Fader_Present;
+int Fader4_Fader_Previous;
 
 //Mastervolume Buttons
 int MasterVolume_Mute_Button_Previous;
 int MasterVolume_Mute_Button_Present;
-int MasterVolume_Fade;
+int MasterVolume_Fader_Present;
+int MasterVolume_Fader_Previous;
 
 //Variabels
 boolean gerade = true;
@@ -198,18 +203,19 @@ void setup()
   pinMode(MasterVolume_Button_LED, OUTPUT);
   pinMode(MasterVolume_Fader, INPUT);
 
+ 
+  Rotary_Encoder_Previous_State = digitalRead(Rotary_Encoder_Out_A);
   Serial.begin(9600);
-  Rotary_Encoder_Present_State = digitalRead(Rotary_Encoder_Out_A);
 }
 void loop()
 {
   /*
-Rotary_Encoder(0,1,-1);Rotary_Encoder_Button(0,1);
-Fader1_Mute_Button(0,1);Fader1_Lock_Button(0,1);Fader1_Solo_Button(0,1);Fader1_Fader(0-100)
-Fader2_Mute_Button(0,1);Fader2_Lock_Button(0,1);Fader2_Solo_Button(0,1);Fader2_Fader(0-100)
-Fader3_Mute_Button(0,1);Fader3_Lock_Button(0,1);Fader3_Solo_Button(0,1);Fader3_Fader(0-100)
-Fader4_Mute_Button(0,1);Fader4_Lock_Button(0,1);Fader4_Solo_Button(0,1);Fader4_Fader(0-100)
-MasterVolume_Button(0,1);MasterVolume_Fader(0-100);
+Rotary_Encoder(1,-1);Rotary_Encoder_Button(0,;
+Fader1_Mute_Button(1);Fader1_Lock_Button(1);Fader1_Solo_Button(1);Fader1_Fader(0-100)
+Fader2_Mute_Button(1);Fader2_Lock_Button(1);Fader2_Solo_Button(1);Fader2_Fader(0-100)
+Fader3_Mute_Button(1);Fader3_Lock_Button(1);Fader3_Solo_Button(1);Fader3_Fader(0-100)
+Fader4_Mute_Button(1);Fader4_Lock_Button(1);Fader4_Solo_Button(1);Fader4_Fader(0-100)
+MasterVolume_Button(1);MasterVolume_Fader(0-100);
 */
   //RotaryEncoder
   Rotary_Encoder_Present_State = digitalRead(Rotary_Encoder_Out_A);
@@ -219,18 +225,13 @@ MasterVolume_Button(0,1);MasterVolume_Fader(0-100);
     {
       if (digitalRead(Rotary_Encoder_Out_B) != Rotary_Encoder_Present_State)
       {
-        Serial.print("1;");
+        Serial.println("Rotary_Encoder;1;");
       }
       else
       {
-        Serial.print("-1;");
+        Serial.println("Rotary_Encoder;-1;");
       }
     }
-    else
-    {
-      Serial.print("0;");
-    }
-
     if (gerade == true {
       gerade = false;
         } else{
@@ -240,10 +241,6 @@ MasterVolume_Button(0,1);MasterVolume_Fader(0-100);
   Rotary_Encoder_Previous_State = Rotary_Encoder_Present_State;
   }
 }
-
-
-
-
 
 /*
 const int  buttonPin = 2;    // the pin that the pushbutton is attached to
