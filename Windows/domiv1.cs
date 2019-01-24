@@ -1,11 +1,7 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Runtime.InteropServices;
-using System.Diagnostics;
-using System.Windows;
+/*
+Fabian ist cool!
+ */
+
 namespace Arduino_Mixer
 {
     class AudioAnalyzer
@@ -585,4 +581,4 @@ namespace Arduino_Mixer
         #endregion
     }
 }
-        #endregion
+        #endregion/
