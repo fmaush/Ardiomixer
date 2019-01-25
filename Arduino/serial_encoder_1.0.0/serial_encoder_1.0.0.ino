@@ -112,8 +112,7 @@ int MasterVolume_Fader_Previous;
 //Variabels
 int Rotary_Encoder_Counter = 0;
 int Fader_Compliance = 10;
-int Serial_Inbound;
-int Icon_var;
+int LED_Control;
 
 void setup()
 {
@@ -191,21 +190,20 @@ void setup()
 }
 void loop()
 {
-  /* The Dataflow
-  Refrences to the DataStream Outputed by the Arduino
-
-Rotary_Encoder;(1|-1)  Rotary_Encoder_Button;1
-//RotaryEncoder -1 back +1 forward ; 1=on
-Fader1_Mute_Button;1 Fader1_Lock_Button;1 Fader1_Solo_Button;1  Fader1_Fader;(0-100)
-//Button 1=on//Fader: 0 =lowest 100= highest
-Fader2_Mute_Button;1  Fader2_Lock_Button;1  Fader2_Solo_Button;1  Fader2_Fader;(0-100)
-//*
-Fader3_Mute_Button;1 Fader3_Lock_Button;1  Fader3_Solo_Button(0,1) Fader3_Fader;(0-100)
-//*
-Fader4_Mute_Button;1  Fader4_Lock_Button;1  Fader4_Solo_Button;1  Fader4_Fader;(0-100)
-//*
-MasterVolume_Mute_Button;1    MasterVolume_Fader;(0-100)
-//*
+ /* The Dataflow
+ Refrences to the DataStream Outputed by the Arduino
+ Rotary_Encoder;(1|-1)  Rotary_Encoder_Button;1
+ //RotaryEncoder -1 back +1 forward ; 1=on
+ Fader1_Mute_Button;1 Fader1_Lock_Button;1 Fader1_Solo_Button;1  Fader1_Fader;(0-100)
+ //Button 1=on//Fader: 0 =lowest 100= highest
+ Fader2_Mute_Button;1  Fader2_Lock_Button;1  Fader2_Solo_Button;1  Fader2_Fader;(0-100)
+ //*
+ Fader3_Mute_Button;1 Fader3_Lock_Button;1  Fader3_Solo_Button(0,1) Fader3_Fader;(0-100)
+ //*
+ Fader4_Mute_Button;1  Fader4_Lock_Button;1  Fader4_Solo_Button;1  Fader4_Fader;(0-100)
+ //*
+ MasterVolume_Mute_Button;1    MasterVolume_Fader;(0-100)
+ //*
 
 */
 
@@ -378,17 +376,22 @@ MasterVolume_Mute_Button;1    MasterVolume_Fader;(0-100)
     Serial.println("MasterVolume_Fader;" + MasterVolume_Fader_Present);
   }
 
-  //Serial Port Read
-
-  Serial_Inbound = Serial.read();
-  if (Serial.available())
+  //Serial to LED ansteuern
+  if (Serial.Inbound() > 0)
   {
-    if (Serial_Inbound == 'IconData')
+    LED_Control = Serial.readString();
+
+    if (LED_Control == "Fader1_Mute_Button_LED;1")
     {
-      Serial_Inbound = Icon_var;
-      Serial.println("Empfangen:" + Icon_var);
+      Fader1_Mute_Button_LED = true;
+    }
+
+    if (LED_Control = "Fader1_Mute_Button_LED;0")
+    {
+      Fader1_Mute_Button_LED = false;
     }
   }
+
   //
   //Reset of variables
   //
