@@ -111,6 +111,7 @@ int MasterVolume_Fader_Previous;
 
 //Variabels
 int Rotary_Encoder_Counter = 0;
+int Fader_Compliance = 10;
 
 void setup()
 {
@@ -182,6 +183,8 @@ void setup()
 
   MasterVolume_Mute_Button_Previous = digitalRead(MasterVolume_Mute_Button);
 
+  Fader1_Fader_Previous = analogRead(Fader1_Fader);
+
   Serial.begin(9600);
 }
 void loop()
@@ -226,6 +229,12 @@ MasterVolume_Mute_Button;1    MasterVolume_Fader;(0-100)
 
   MasterVolume_Mute_Button_Present = digitalRead(MasterVolume_Mute_Button);
 
+  Fader1_Fader_Present = analogRead(Fader1_Fader);
+  Fader2_Fader_Present = analogRead(Fader2_Fader);
+  Fader3_Fader_Present = analogRead(Fader3_Fader);
+  Fader4_Fader_Present = analogRead(Fader4_Fader);
+  MasterVolume_Fader_Present = analogRead(MasterVolume_Fader);
+
   //RotaryEncoder
 
   if (Rotary_Encoder_Previous != Rotary_Encoder_Present)
@@ -256,6 +265,7 @@ MasterVolume_Mute_Button;1    MasterVolume_Fader;(0-100)
     }
   }
 
+  //BUTTONS
   //Rotary_Encoder_Button
   if (Rotary_Encoder_Button_Previous != Rotary_Encoder_Button_Present && Rotary_Encoder_Button_Present == 1)
   {
@@ -338,6 +348,35 @@ MasterVolume_Mute_Button;1    MasterVolume_Fader;(0-100)
   {
     Serial.println("MasterVolume_Mute_Button;1");
   }
+  ///BUTTONS
+
+  ///Fader1_Fader
+  if (Fader1_Fader_Previous + Fader_Compliance < Fader1_Fader_Present || Fader1_Fader_Previous - Fader_Compliance > Fader1_Fader_Present)
+  {
+    Serial.println("Fader1_Fader;" + Fader1_Fader_Present);
+  }
+  ///Fader2_Fader
+  if (Fader2_Fader_Previous + Fader_Compliance < Fader2_Fader_Present || Fader2_Fader_Previous - Fader_Compliance > Fader2_Fader_Present)
+  {
+    Serial.println("Fader2_Fader;" + Fader2_Fader_Present);
+  }
+  ///Fader3_Fader
+  if (Fader3_Fader_Previous + Fader_Compliance < Fader3_Fader_Present || Fader3_Fader_Previous - Fader_Compliance > Fader3_Fader_Present)
+  {
+    Serial.println("Fader3_Fader;" + Fader3_Fader_Present);
+  }
+  ///Fader4_Fader
+  if (Fader4_Fader_Previous + Fader_Compliance < Fader4_Fader_Present || Fader4_Fader_Previous - Fader_Compliance > Fader4_Fader_Present)
+  {
+    Serial.println("Fader4_Fader;" + Fader4_Fader_Present);
+  }
+  ///MasterVolume_Fader
+  if (MasterVolume_Fader_Previous + Fader_Compliance < MasterVolume_Fader_Present || MasterVolume_Fader_Previous - Fader_Compliance > MasterVolume_Fader_Present)
+  {
+    Serial.println("MasterVolume_Fader;" + MasterVolume_Fader_Present);
+  }
+
+  //Serial.Read()
 
   //
   //Reset of variables
@@ -364,6 +403,12 @@ MasterVolume_Mute_Button;1    MasterVolume_Fader;(0-100)
   Fader4_Solo_Button_Previous = Fader4_Solo_Button_Present;
 
   MasterVolume_Mute_Button_Previous = MasterVolume_Mute_Button_Present;
+
+  Fader1_Fader_Previous = Fader1_Fader_Present;
+  Fader2_Fader_Previous = Fader2_Fader_Present;
+  Fader3_Fader_Previous = Fader3_Fader_Present;
+  Fader4_Fader_Previous = Fader4_Fader_Present;
+  MasterVolume_Fader_Previous = MasterVolume_Fader_Present;
 }
 
 //
