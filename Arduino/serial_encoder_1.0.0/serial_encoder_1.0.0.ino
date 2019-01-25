@@ -112,6 +112,8 @@ int MasterVolume_Fader_Previous;
 //Variabels
 int Rotary_Encoder_Counter = 0;
 int Fader_Compliance = 10;
+int Serial_Inbound;
+int Icon_var;
 
 void setup()
 {
@@ -376,8 +378,17 @@ MasterVolume_Mute_Button;1    MasterVolume_Fader;(0-100)
     Serial.println("MasterVolume_Fader;" + MasterVolume_Fader_Present);
   }
 
-  //Serial.Read()
+  //Serial Port Read
 
+  Serial_Inbound = Serial.read();
+  if (Serial.available())
+  {
+    if (Serial_Inbound == 'IconData')
+    {
+      Serial_Inbound = Icon_var;
+      Serial.println("Empfangen:" + Icon_var);
+    }
+  }
   //
   //Reset of variables
   //
@@ -402,12 +413,12 @@ MasterVolume_Mute_Button;1    MasterVolume_Fader;(0-100)
   Fader4_Lock_Button_Previous = Fader4_Lock_Button_Present;
   Fader4_Solo_Button_Previous = Fader4_Solo_Button_Present;
 
-  MasterVolume_Mute_Button_Previous = MasterVolume_Mute_Button_Present;
-
   Fader1_Fader_Previous = Fader1_Fader_Present;
   Fader2_Fader_Previous = Fader2_Fader_Present;
   Fader3_Fader_Previous = Fader3_Fader_Present;
   Fader4_Fader_Previous = Fader4_Fader_Present;
+
+  MasterVolume_Mute_Button_Previous = MasterVolume_Mute_Button_Present;
   MasterVolume_Fader_Previous = MasterVolume_Fader_Present;
 }
 
