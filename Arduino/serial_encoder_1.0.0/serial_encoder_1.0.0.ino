@@ -1,8 +1,8 @@
 //define RotaryEncoderPins
 
-#define Rotary_Encoder_Out_A 2
-#define Rotary_Encoder_Out_B 3
-#define Rotary_Encoder_Button 4
+#define Rotary_Encoder_Out_A 9
+#define Rotary_Encoder_Out_B 9
+#define Rotary_Encoder_Button 9
 
 //define FaderPins
 
@@ -377,7 +377,7 @@ void loop()
   }
 
   //Serial to LED ansteuern
-  if (Serial.Inbound() > 0)
+  if (Serial.available() > 0)
   {
     LED_Control = Serial.readString();
 
