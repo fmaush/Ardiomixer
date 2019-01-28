@@ -8,5 +8,6 @@ namespace Ardiomixer
 {
     class Class1
     {
+        //Test
     }
 }
