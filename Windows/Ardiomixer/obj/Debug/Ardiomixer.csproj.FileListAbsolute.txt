@@ -1,0 +1,15 @@
+D:\Daten\Development\Ardiomixer\Ardiomixer\Windows\Ardiomixer\bin\Debug\Ardiomixer.exe.config
+D:\Daten\Development\Ardiomixer\Ardiomixer\Windows\Ardiomixer\bin\Debug\Ardiomixer.exe
+D:\Daten\Development\Ardiomixer\Ardiomixer\Windows\Ardiomixer\bin\Debug\Ardiomixer.pdb
+D:\Daten\Development\Ardiomixer\Ardiomixer\Windows\Ardiomixer\obj\Debug\Ardiomixer.csprojAssemblyReference.cache
+D:\Daten\Development\Ardiomixer\Ardiomixer\Windows\Ardiomixer\obj\Debug\MainWindow.g.cs
+D:\Daten\Development\Ardiomixer\Ardiomixer\Windows\Ardiomixer\obj\Debug\App.g.cs
+D:\Daten\Development\Ardiomixer\Ardiomixer\Windows\Ardiomixer\obj\Debug\Ardiomixer_MarkupCompile.cache
+D:\Daten\Development\Ardiomixer\Ardiomixer\Windows\Ardiomixer\obj\Debug\Ardiomixer_MarkupCompile.lref
+D:\Daten\Development\Ardiomixer\Ardiomixer\Windows\Ardiomixer\obj\Debug\MainWindow.baml
+D:\Daten\Development\Ardiomixer\Ardiomixer\Windows\Ardiomixer\obj\Debug\Ardiomixer.g.resources
+D:\Daten\Development\Ardiomixer\Ardiomixer\Windows\Ardiomixer\obj\Debug\Ardiomixer.Properties.Resources.resources
+D:\Daten\Development\Ardiomixer\Ardiomixer\Windows\Ardiomixer\obj\Debug\Ardiomixer.csproj.GenerateResource.cache
+D:\Daten\Development\Ardiomixer\Ardiomixer\Windows\Ardiomixer\obj\Debug\Ardiomixer.csproj.CoreCompileInputs.cache
+D:\Daten\Development\Ardiomixer\Ardiomixer\Windows\Ardiomixer\obj\Debug\Ardiomixer.exe
+D:\Daten\Development\Ardiomixer\Ardiomixer\Windows\Ardiomixer\obj\Debug\Ardiomixer.pdb

@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Windows"
+    "\\Windows",
+    "\\Windows\\Ardiomixer"
   ],
   "SelectedNode": "\\Windows\\Ardiomixer.sln",
   "PreviewInSolutionExplorer": false
