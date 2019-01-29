@@ -23,6 +23,12 @@ namespace Ardiomixer
         public MainWindow()
         {
             InitializeComponent();
+            getWindowsAudioData();
+        }
+
+    public void getWindowsAudioData()
+        {
+
         }
     }
 }
