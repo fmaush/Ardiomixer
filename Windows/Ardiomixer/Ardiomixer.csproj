@@ -58,7 +58,7 @@
     </ApplicationDefinition>
     <Compile Include="Ressources\WindowsAudioManager\WindowsAudioData.cs" />
     <Compile Include="Ressources\WindowsAudioManager\WindowsAudioManager.cs" />
-    <Compile Include="WindowsAudioProperties.cs" />
+    <Compile Include="Ressources\WindowsAudioManager\WindowsAudioManagerProperties.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

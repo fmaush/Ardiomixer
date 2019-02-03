@@ -22,9 +22,9 @@ namespace Ardiomixer
     {
         public int ProcessID { get; set; }
 
-        public float ApplicationVolume { get; set; }
+        public float? ApplicationVolume { get; set; }
 
-        public bool isApplicationMuted { get; set; }
+        public bool? isApplicationMuted { get; set; }
 
     }
 }
