@@ -2,7 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\Windows",
-    "\\Windows\\Ardiomixer"
+    "\\Windows\\Ardiomixer",
+    "\\Windows\\Ardiomixer\\Ressources",
+    "\\Windows\\Ardiomixer\\Ressources\\WindowsAudioManager"
   ],
   "SelectedNode": "\\Windows\\Ardiomixer.sln",
   "PreviewInSolutionExplorer": false
